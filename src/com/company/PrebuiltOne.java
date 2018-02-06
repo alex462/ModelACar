@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.Scanner;
 
+import static com.company.Main.mainMenu;
 import static com.company.Main.vehicle;
 
 public class PrebuiltOne extends Car {
@@ -50,16 +51,37 @@ public class PrebuiltOne extends Car {
         this.gas = gas;
     }
 
-//    public void getCarInfo(){
-//
-//        System.out.println("Your current car is a " + getYear() + " " + getMake() + " " + getModel() + ". It is going "
-//                + getSpeed() + " MPH and has " + getGas() + "% of its gas left.");
-//
-//    }
-
     protected void getPrebuiltOneInfo(){
         System.out.println("Your current car is a " + getColor() + " " + getYear() + " " + getMake() + " " + getModel() + ". It is going "
                 + getSpeed() + " MPH and has " + getGas() + "% of its gas left.");
+    }
+
+    public void drivePrebuiltOne(Car car){ //require that method take the car object bc we need to see the speed of the car before we do anything with it.
+
+        for(int seconds = 0; seconds <= 5; seconds++){
+            //get current gas and speed
+            car.setSpeed(car.getSpeed() + 2); //will add 2mph every time it loops
+            car.setGas(car.getGas() - 4); //will take away 4(%) of gas tank each time it loops
+
+            System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
+                    + car.getGas() + "% of its gas left.");
+        }
+
+        mainMenu.hamboMenu(car);
+    }
+
+    public void slowPrebuiltOne(Car car){
+
+        for(int seconds = 0; seconds <= 5; seconds++){
+            //get current gas and speed
+            car.setSpeed(car.getSpeed() - 4); //will take away 4mph every time it loops
+            car.setGas(car.getGas() - 2); //will take away 2(%) of gas tank each time it loops
+
+            System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
+                    + car.getGas() + "% of its gas left.");
+        }
+
+        mainMenu.hamboMenu(car);
     }
 
 //    public void drivePrebuiltOne(Car car){ //require that method take the car object bc we need to see the speed of the car before we do anything with it.

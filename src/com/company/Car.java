@@ -76,31 +76,27 @@ public class Car extends Vehicle {
         for(int seconds = 0; seconds <= 5; seconds++){
             //get current gas and speed
             car.setSpeed(car.getSpeed() + 1); //will add 1mph every time it loops
-            car.setGas(car.getGas() - 2); //will take away 1(%) of gas tank each time it loops
+            car.setGas(car.getGas() - 2); //will take away 2(%) of gas tank each time it loops
 
             System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
             + car.getGas() + "% of its gas left.");
         }
 
-        mainMenu.menu(car);
+        mainMenu.customMenu(car);
     }
 
     public void slowCar(Car car){
 
         for(int seconds = 0; seconds <= 5; seconds++){
             //get current gas and speed
-            car.setSpeed(car.getSpeed() - 1); //will add 1mph every time it loops
+            car.setSpeed(car.getSpeed() - 1); //will take away 1mph every time it loops
             car.setGas(car.getGas() - 1); //will take away 1(%) of gas tank each time it loops
-
-//            try{
-//
-//            }
 
             System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
                     + car.getGas() + "% of its gas left.");
         }
 
-        mainMenu.menu(car);
+        mainMenu.customMenu(car);
     }
 
     public void addGas(Car car){
@@ -111,6 +107,6 @@ public class Car extends Vehicle {
         System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
                 + car.getGas() + "% of its gas left.");
 
-        mainMenu.menu(car);
+        mainMenu.customMenu(car);
     }
 }
