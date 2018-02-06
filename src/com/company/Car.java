@@ -88,9 +88,17 @@ public class Car extends Vehicle {
     public void slowCar(Car car){
 
         for(int seconds = 0; seconds <= 5; seconds++){
-            //get current gas and speed
-            car.setSpeed(car.getSpeed() - 1); //will take away 1mph every time it loops
-            car.setGas(car.getGas() - 1); //will take away 1(%) of gas tank each time it loops
+            if((car.getSpeed() <= 200) && (car.getSpeed()) >= 0) {
+            car.setSpeed(car.getSpeed() - 1);
+            }//will take away 1mph every time it loops
+            if((car.getGas()) >= 5) {
+                car.setGas(car.getGas() - 1); //will take away 1(%) of gas tank each time it loops
+            }else if(car.getSpeed() < 5) {
+                System.out.println("You cannot go a negative speed. Please accelerate. ");
+            }else if(car.getSpeed() > 200){
+                System.out.println("Too fast! Your car's governer (speed limiter) will automatically slow you down.");
+                car.setSpeed(car.getSpeed() - 1);
+            }
 
             System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
                     + car.getGas() + "% of its gas left.");

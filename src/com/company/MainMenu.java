@@ -81,26 +81,25 @@ public class MainMenu {
         }
     }
 
-    public void hamboMenu(Car car){ //make method take a car object and pass into method
+    public void hamboMenu(PrebuiltOne prebuiltOne){ //make method take a car object and pass into method
 
         //want to accel, dec, and fill up gas
-        System.out.println("\nWhat would you like to do with your " + car.getModel() + "?");
+        System.out.println("\nWhat would you like to do with your " + prebuiltOne.getModel() + "?");
         System.out.println("1. Accelerate\n2. Decelerate\n3. Fill up your gas tank\n4. Exit");
 
         try{
-//            int action;
             switch(input.nextInt()){
                 case 1:
                     //accelerate
-                    prebuiltOne.drivePrebuiltOne(car);
+                    prebuiltOne.drivePrebuiltOne(prebuiltOne);
                     break;
                 case 2:
                     //decelerate
-                    car.slowCar(car);
+                    prebuiltOne.slowPrebuiltOne(prebuiltOne);
                     break;
                 case 3:
                     //gas
-                    car.addGas(car);
+                    prebuiltOne.addGas(prebuiltOne);
                     break;
                 case 4:
                     //exit
@@ -112,30 +111,29 @@ public class MainMenu {
         }catch(InputMismatchException ime){
             input.nextLine();
             System.out.println("Please enter either a number between 1 and 4: ");
-            hamboMenu(car);
+            hamboMenu(prebuiltOne);
         }
     }
 
-    public void ratiMenu(Car car){ //make method take a car object and pass into method
+    public void ratiMenu(PrebuiltTwo prebuiltTwo){ //make method take a car object and pass into method
 
         //want to accel, dec, and fill up gas
-        System.out.println("\nWhat would you like to do with your " + car.getModel() + "?");
+        System.out.println("\nWhat would you like to do with your " + prebuiltTwo.getModel() + "?");
         System.out.println("1. Accelerate\n2. Decelerate\n3. Fill up your gas tank\n4. Exit");
 
         try{
-//            int action;
             switch(input.nextInt()){
                 case 1:
                     //accelerate
-                    car.driveCar(car);
+                    prebuiltTwo.drivePrebuiltTwo(prebuiltTwo);
                     break;
                 case 2:
                     //decelerate
-                    car.slowCar(car);
+                    prebuiltTwo.slowPrebuiltTwo(prebuiltTwo);
                     break;
                 case 3:
                     //gas
-                    car.addGas(car);
+                    prebuiltTwo.addGas(prebuiltTwo);
                     break;
                 case 4:
                     //exit
@@ -147,7 +145,7 @@ public class MainMenu {
         }catch(InputMismatchException ime){
             input.nextLine();
             System.out.println("Please enter either a number between 1 and 4: ");
-            ratiMenu(car);
+            ratiMenu(prebuiltTwo);
         }
     }
 }
