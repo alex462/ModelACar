@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
 
 
-        vehicle = new Vehicle();
-        vehicle.chooseVehicle();
+//        vehicle = new Vehicle();
+//        vehicle.chooseVehicle();
 
         mainMenu = new MainMenu();
         mainMenu.createCar();

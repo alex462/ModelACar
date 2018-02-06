@@ -11,13 +11,19 @@ public class Car extends Vehicle {
     private int gas = 100;
     private Scanner input = new Scanner(System.in);
 
-    public Car() {
+    public Car() { //only has one constructor (default constructor - parameters are blank)
 
         setMake();
         setModel();
         setYear();
         setSpeed(0);
         setGas(100);
+    }
+
+    public Car(int year, String make, String model, int speed, int gas) {
+        super(year, make, model); //gets values/variables from parent class
+        this.speed = speed;
+        this.gas = gas;
     }
 
     public void setYear() {
@@ -79,7 +85,7 @@ public class Car extends Vehicle {
         mainMenu.menu(car);
     }
 
-    public void slowDown(Car car){
+    public void slowCar(Car car){
 
         for(int seconds = 0; seconds <= 5; seconds++){
             //get current gas and speed
