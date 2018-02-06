@@ -9,8 +9,20 @@ public class MainMenu {
 
     protected void createCar() {
 
+        Vehicle vehicle = new Vehicle();
+        vehicle.chooseVehicle();
+
         Car car = new Car();
         car.getCarInfo();
+
+
+        PrebuiltOne prebuiltOne = new PrebuiltOne();
+        prebuiltOne.getCarInfo();
+//        menu(prebuiltOne);
+
+        PrebuiltTwo prebuiltTwo = new PrebuiltTwo();
+        prebuiltTwo.getCarInfo();
+//        menu(prebuiltTwo);
 
         menu(car);
     }
