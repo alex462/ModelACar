@@ -5,6 +5,7 @@ import java.util.Scanner;
 import static com.company.Main.mainMenu;
 import static com.company.Main.vehicle;
 
+//HAMBOURGHINI
 public class PrebuiltOne extends Car {
     //add other constructors like color
     private String color;
@@ -51,14 +52,14 @@ public class PrebuiltOne extends Car {
         this.gas = gas;
     }
 
-    protected void getPrebuiltOneInfo(){
+    protected void getPrebuiltOneInfo() {
         System.out.println("Your current car is a " + getColor() + " " + getYear() + " " + getMake() + " " + getModel() + ". It is going "
                 + getSpeed() + " MPH and has " + getGas() + "% of its gas left.");
     }
 
-    public void drivePrebuiltOne(PrebuiltOne prebuiltOne){ //require that method take the car object bc we need to see the speed of the car before we do anything with it.
+    public void drivePrebuiltOne(PrebuiltOne prebuiltOne) { //require that method take the car object bc we need to see the speed of the car before we do anything with it.
 
-        for(int seconds = 0; seconds <= 5; seconds++){
+        for (int seconds = 0; seconds <= 5; seconds++) {
             //get current gas and speed
             prebuiltOne.setSpeed(prebuiltOne.getSpeed() + 2); //will add 2mph every time it loops
             prebuiltOne.setGas(prebuiltOne.getGas() - 4); //will take away 4(%) of gas tank each time it loops
@@ -70,13 +71,17 @@ public class PrebuiltOne extends Car {
         mainMenu.hamboMenu(prebuiltOne);
     }
 
-    public void slowPrebuiltOne(PrebuiltOne prebuiltOne){
+    public void slowPrebuiltOne(PrebuiltOne prebuiltOne) {
 
-        for(int seconds = 0; seconds <= 5; seconds++){
-            //get current gas and speed
-            prebuiltOne.setSpeed(prebuiltOne.getSpeed() - 4); //will take away 4mph every time it loops
-            prebuiltOne.setGas(prebuiltOne.getGas() - 2); //will take away 2(%) of gas tank each time it loops
-
+        for (int seconds = 0; seconds <= 5; seconds++) {
+            if ((prebuiltOne.getSpeed() <= 100) && (prebuiltOne.getSpeed()) >= 1) {
+                prebuiltOne.setSpeed(prebuiltOne.getSpeed() - 1);
+                prebuiltOne.setGas(prebuiltOne.getGas() - 2);
+            } else if ((prebuiltOne.getGas()) >= 5) {
+                prebuiltOne.setGas(prebuiltOne.getGas());
+            } else if (prebuiltOne.getSpeed() < 6) {
+                prebuiltOne.setSpeed(0);
+            }
             System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + prebuiltOne.getSpeed() + " MPH and has "
                     + prebuiltOne.getGas() + "% of its gas left.");
         }
@@ -84,7 +89,7 @@ public class PrebuiltOne extends Car {
         mainMenu.hamboMenu(prebuiltOne);
     }
 
-    public void addGas(PrebuiltOne prebuiltOne){
+    public void addGas(PrebuiltOne prebuiltOne) {
 
         prebuiltOne.setGas(100);
 

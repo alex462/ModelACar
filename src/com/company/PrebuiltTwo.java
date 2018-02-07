@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import static com.company.Main.mainMenu;
 
+//MAZDERATI
 public class PrebuiltTwo extends Car {
 
     private String color;
