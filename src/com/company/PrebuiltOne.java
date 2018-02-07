@@ -112,6 +112,7 @@ public class PrebuiltOne extends Car {
         prebuiltOne.setGas(100);
 
         System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " now has a full tank of gas!");
+        prebuiltOne.setSpeed(0);
         System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + prebuiltOne.getSpeed() + " MPH and has "
                 + prebuiltOne.getGas() + "% of its gas left.");
 

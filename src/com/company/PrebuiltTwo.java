@@ -116,6 +116,7 @@ public class PrebuiltTwo extends Car {
         prebuiltTwo.setGas(100);
 
         System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " now has a full tank of gas!");
+        prebuiltTwo.setSpeed(0);
         System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + prebuiltTwo.getSpeed() + " MPH and has "
                 + prebuiltTwo.getGas() + "% of its gas left.");
 

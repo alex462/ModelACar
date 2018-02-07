@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import static com.company.Main.mainMenu;
 
+//CUSTOM - add color option
 public class Car extends Vehicle {
 
     private int speed = 0;
@@ -128,6 +129,7 @@ public class Car extends Vehicle {
         car.setGas(100);
 
         System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " now has a full tank of gas!");
+        car.setSpeed(0);
         System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
                 + car.getGas() + "% of its gas left.");
 
