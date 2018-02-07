@@ -60,9 +60,21 @@ public class PrebuiltOne extends Car {
     public void drivePrebuiltOne(PrebuiltOne prebuiltOne) { //require that method take the car object bc we need to see the speed of the car before we do anything with it.
 
         for (int seconds = 0; seconds <= 5; seconds++) {
-            //get current gas and speed
-            prebuiltOne.setSpeed(prebuiltOne.getSpeed() + 2); //will add 2mph every time it loops
-            prebuiltOne.setGas(prebuiltOne.getGas() - 4); //will take away 4(%) of gas tank each time it loops
+            if (prebuiltOne.getSpeed() <= 100) {
+                prebuiltOne.setSpeed(prebuiltOne.getSpeed() + 1);
+                prebuiltOne.setGas(prebuiltOne.getGas() - 2);
+            }
+            if (prebuiltOne.getSpeed() >= 100) {
+                prebuiltOne.setSpeed(100);
+                System.out.println("Your Hambourghini has topped out at 100. Please decelerate.");
+                break;
+            }
+            if ((prebuiltOne.getGas()) <= 0) {
+                prebuiltOne.setSpeed(0);
+                prebuiltOne.setGas(getGas());
+                System.out.println("You've run out of gas!");
+                break;
+            }
 
             System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + prebuiltOne.getSpeed() + " MPH and has "
                     + prebuiltOne.getGas() + "% of its gas left.");
@@ -77,6 +89,12 @@ public class PrebuiltOne extends Car {
             if ((prebuiltOne.getSpeed() <= 100) && (prebuiltOne.getSpeed()) >= 1) {
                 prebuiltOne.setSpeed(prebuiltOne.getSpeed() - 1);
                 prebuiltOne.setGas(prebuiltOne.getGas() - 2);
+            }
+            if ((prebuiltOne.getGas()) <= 0) {
+                prebuiltOne.setSpeed(0);
+                prebuiltOne.setGas(getGas());
+                System.out.println("You've run out of gas!");
+                break;
             } else if ((prebuiltOne.getGas()) >= 5) {
                 prebuiltOne.setGas(prebuiltOne.getGas());
             } else if (prebuiltOne.getSpeed() < 6) {
@@ -100,48 +118,6 @@ public class PrebuiltOne extends Car {
         mainMenu.customMenu(prebuiltOne);
     }
 
-//    public void drivePrebuiltOne(Car car){ //require that method take the car object bc we need to see the speed of the car before we do anything with it.
-//
-//        for(int seconds = 0; seconds <= 5; seconds++){
-//            //get current gas and speed
-//            car.setSpeed(car.getSpeed() + 2); //will add 1mph every time it loops
-//            car.setGas(car.getGas() - 4); //will take away 1(%) of gas tank each time it loops
-//
-//            System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
-//                    + car.getGas() + "% of its gas left.");
-//        }
-//
-//        vehicle.chooseVehicle();
-//    }
-//
-//    public void slowDown(Car car){
-//
-//        for(int seconds = 0; seconds <= 5; seconds++){
-//            //get current gas and speed
-//            car.setSpeed(car.getSpeed() - 1); //will add 1mph every time it loops
-//            car.setGas(car.getGas() - 1); //will take away 1(%) of gas tank each time it loops
-//
-////            try{
-////
-////            }
-//
-//            System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
-//                    + car.getGas() + "% of its gas left.");
-//        }
-//
-//        vehicle.chooseVehicle();
-//    }
-//
-//    public void addGas(Car car){
-//
-//        car.setGas(100);
-//
-//        System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " now has a full tank of gas!");
-//        System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
-//                + car.getGas() + "% of its gas left.");
-//
-//        vehicle.chooseVehicle();
-//    }
 }
 
 

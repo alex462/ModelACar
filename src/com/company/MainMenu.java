@@ -23,7 +23,7 @@ public class MainMenu {
                     hamboMenu(prebuiltOne);
                     break;
                 case 2: //Rati
-                    PrebuiltTwo prebuiltTwo = new PrebuiltTwo(1993, "ef-Ford", "Mazderati", 0, 100, "brown");
+                    PrebuiltTwo prebuiltTwo = new PrebuiltTwo(1993, "ef-Ford", "Mazderati", 0, 100, "electric blue");
                     prebuiltTwo.getPrebuiltTwoInfo();
                     ratiMenu(prebuiltTwo);
                     break;

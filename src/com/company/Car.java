@@ -74,17 +74,21 @@ public class Car extends Vehicle {
     public void driveCar(Car car) { //require that method take the car object bc we need to see the speed of the car before we do anything with it.
 
         for (int seconds = 0; seconds <= 5; seconds++) {
-            //get current gas and speed
-            if (car.getSpeed() <= 200) {
-                car.setSpeed(car.getSpeed() + 1);
+            if (car.getSpeed() <= 120) {
+                car.setSpeed(car.getSpeed() + 2);
                 car.setGas(car.getGas() - 2);
-            }else if ((car.getGas()) == 0) {
-                car.setSpeed(0);
-                car.setGas(car.getGas() + 100);
             }
-//            else if (car.getSpeed() < 6) {
-//                car.setSpeed(0);
-//            }
+            if (car.getSpeed() >= 120) {
+                car.setSpeed(120);
+                System.out.println("Your " + getModel() + " has topped out at 160. Please decelerate.");
+                break;
+            }
+            if ((car.getGas()) <= 0) {
+                car.setSpeed(0);
+                car.setGas(getGas());
+                System.out.println("You've run out of gas!");
+                break;
+            }
 
             System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
                     + car.getGas() + "% of its gas left.");
@@ -97,9 +101,15 @@ public class Car extends Vehicle {
 
         for (int seconds = 0; seconds <= 5; seconds++) {
 
-            if ((car.getSpeed() <= 200) && (car.getSpeed()) >= 1) {
+            if ((car.getSpeed() <= 120) && (car.getSpeed()) >= 1) {
                 car.setSpeed(car.getSpeed() - 1);
                 car.setGas(car.getGas() - 1);
+            }
+            if ((car.getGas()) <= 0) {
+                car.setSpeed(0);
+                car.setGas(getGas());
+                System.out.println("You've run out of gas!");
+                break;
             } else if ((car.getGas()) >= 5) {
                 car.setGas(car.getGas());
             } else if (car.getSpeed() < 6) {

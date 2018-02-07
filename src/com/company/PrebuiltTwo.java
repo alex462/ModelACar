@@ -53,18 +53,31 @@ public class PrebuiltTwo extends Car {
         this.gas = gas;
     }
 
-    protected void getPrebuiltTwoInfo(){
+    protected void getPrebuiltTwoInfo() {
 
         System.out.println("Your current car is a " + getColor() + " " + getYear() + " " + getMake() + " " + getModel() + ". It is going "
                 + getSpeed() + " MPH and has " + getGas() + "% of its gas left.");
     }
 
-    public void drivePrebuiltTwo(PrebuiltTwo prebuiltTwo){ //require that method take the car object bc we need to see the speed of the car before we do anything with it.
+    public void drivePrebuiltTwo(PrebuiltTwo prebuiltTwo) { //require that method take the car object bc we need to see the speed of the car before we do anything with it.
 
-        for(int seconds = 0; seconds <= 5; seconds++){
-            //get current gas and speed
-            prebuiltTwo.setSpeed(prebuiltTwo.getSpeed() + 3); //will add 3mph every time it loops
-            prebuiltTwo.setGas(prebuiltTwo.getGas() - 3); //will take away 3(%) of gas tank each time it loops
+        for (int seconds = 0; seconds <= 5; seconds++) {
+            if (prebuiltTwo.getSpeed() < 160) {
+                prebuiltTwo.setSpeed(prebuiltTwo.getSpeed() + 3);
+                prebuiltTwo.setGas(prebuiltTwo.getGas() - 1);
+
+            }
+            if (prebuiltTwo.getSpeed() >= 160) {
+                prebuiltTwo.setSpeed(160);
+                System.out.println("Your Mazderati has topped out at 160. Please decelerate.");
+                break;
+            }
+            if ((prebuiltTwo.getGas()) <= 0) {
+                prebuiltTwo.setSpeed(0);
+                prebuiltTwo.setGas(getGas());
+                System.out.println("You've run out of gas!");
+                break;
+            }
 
             System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + prebuiltTwo.getSpeed() + " MPH and has "
                     + prebuiltTwo.getGas() + "% of its gas left.");
@@ -73,12 +86,23 @@ public class PrebuiltTwo extends Car {
         mainMenu.ratiMenu(prebuiltTwo);
     }
 
-    public void slowPrebuiltTwo(PrebuiltTwo prebuiltTwo){
+    public void slowPrebuiltTwo(PrebuiltTwo prebuiltTwo) {
 
-        for(int seconds = 0; seconds <= 5; seconds++){
-            //get current gas and speed
-            prebuiltTwo.setSpeed(prebuiltTwo.getSpeed() - 2); //will take away 2mph every time it loops
-            prebuiltTwo.setGas(prebuiltTwo.getGas() - 1); //will take away 1(%) of gas tank each time it loops
+        for (int seconds = 0; seconds <= 5; seconds++) {
+            if ((prebuiltTwo.getSpeed() <= 160) && (prebuiltTwo.getSpeed()) >= 1) {
+                prebuiltTwo.setSpeed(prebuiltTwo.getSpeed() - 1);
+                prebuiltTwo.setGas(prebuiltTwo.getGas() - 1);
+            }
+            if ((prebuiltTwo.getGas()) <= 0) {
+                prebuiltTwo.setSpeed(0);
+                prebuiltTwo.setGas(getGas());
+                System.out.println("You've run out of gas!");
+                break;
+            } else if ((prebuiltTwo.getGas()) >= 5) {
+                prebuiltTwo.setGas(prebuiltTwo.getGas());
+            } else if (prebuiltTwo.getSpeed() < 6) {
+                prebuiltTwo.setSpeed(0);
+            }
 
             System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + prebuiltTwo.getSpeed() + " MPH and has "
                     + prebuiltTwo.getGas() + "% of its gas left.");
@@ -87,7 +111,7 @@ public class PrebuiltTwo extends Car {
         mainMenu.ratiMenu(prebuiltTwo);
     }
 
-    public void addGas(PrebuiltTwo prebuiltTwo){
+    public void addGas(PrebuiltTwo prebuiltTwo) {
 
         prebuiltTwo.setGas(100);
 
