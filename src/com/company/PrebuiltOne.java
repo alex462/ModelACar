@@ -24,8 +24,8 @@ public class PrebuiltOne extends Car {
 
 
     public PrebuiltOne(int year, String make, String model, int speed, int gas, String color) {
-        super(year, make, model, speed, gas);
-        this.color = color;
+        super(year, make, model, speed, gas, color);
+//        this.color = color;
     }
 
     public String getColor() {

@@ -16,15 +16,17 @@ public abstract class Vehicle {
     private int year;
     private String make;
     private String model;
+    private String color;
     private Scanner input = new Scanner(System.in);
 //    private Vehicle prebuiltOne;
 //    private Vehicle prebuiltTwo;
 //    private Vehicle car;
 
-    public Vehicle(int year, String make, String model) {
+    public Vehicle(int year, String make, String model, String color) {
         this.year = year;
         this.make = make;
         this.model = model;
+        this.color = color;
     }
 
 //    public void createPrebuiltTwo(){
@@ -34,6 +36,14 @@ public abstract class Vehicle {
 //        chooseVehicle();
 //    }
 
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 
     public Vehicle(){
 
@@ -62,6 +72,7 @@ public abstract class Vehicle {
     public void setModel(String model) {
         this.model = model;
     }
+
 
 //    public void chooseVehicle(){
 //

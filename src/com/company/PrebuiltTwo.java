@@ -25,7 +25,7 @@ public class PrebuiltTwo extends Car {
 
     public PrebuiltTwo(int year, String make, String model, int speed, int gas, String color) {
 
-        super(year, make, model, speed, gas);
+        super(year, make, model, speed, gas, color);
         this.color = color;
     }
 

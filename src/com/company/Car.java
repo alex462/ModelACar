@@ -10,6 +10,7 @@ public class Car extends Vehicle {
 
     private int speed = 0;
     private int gas = 100;
+    private String color;
     private Scanner input = new Scanner(System.in);
 
     public Car() { //only has one constructor (default constructor - parameters are blank)
@@ -19,12 +20,14 @@ public class Car extends Vehicle {
         setYear();
         setSpeed(0);
         setGas(100);
+        setColor();
     }
 
-    public Car(int year, String make, String model, int speed, int gas) {
-        super(year, make, model); //gets values/variables from parent class
+    public Car(int year, String make, String model, int speed, int gas, String color) {
+        super(year, make, model, color); //gets values/variables from parent class
         this.speed = speed;
         this.gas = gas;
+        this.color = color;
     }
 
     public void setYear() {
@@ -48,6 +51,15 @@ public class Car extends Vehicle {
         super.setModel(input.nextLine());
     }
 
+    public void setColor() {
+        System.out.println("What is the color of the car you are building? ");
+        super.setColor(input.nextLine());
+    }
+
+    public String getColor() {
+        return color;
+    }
+
     public int getSpeed() {
         return speed;
     }
@@ -66,7 +78,7 @@ public class Car extends Vehicle {
 
     public void getCarInfo() {
 
-        System.out.println("Your current car is a " + getYear() + " " + getMake() + " " + getModel() + ". It is going "
+        System.out.println("Your current car is a " + getColor() + getYear() + " " + getMake() + " " + getModel() + ". It is going "
                 + getSpeed() + " MPH and has " + getGas() + "% of its gas left.");
 
     }
@@ -91,7 +103,7 @@ public class Car extends Vehicle {
                 break;
             }
 
-            System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
+            System.out.println("Your " + getColor() + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
                     + car.getGas() + "% of its gas left.");
         }
 
@@ -117,7 +129,7 @@ public class Car extends Vehicle {
                 car.setSpeed(0);
             }
 
-            System.out.println("Your " + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
+            System.out.println("Your " + getColor() + getYear() + " " + getMake() + " " + getModel() + " is going " + car.getSpeed() + " MPH and has "
                     + car.getGas() + "% of its gas left.");
         }
 

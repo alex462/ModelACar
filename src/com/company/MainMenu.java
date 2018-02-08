@@ -15,7 +15,6 @@ public class MainMenu {
         System.out.println("Please enter the number corresponding to one of the following options:\n1. Prebuilt vehicle #1\n2. " +
                 "Prebuilt vehicle #2\n3. Custom - build your own car\n4. Exit");
 
-//        while((input.nextInt() <= 4) && (input.nextInt() <= 0)) {
             try {
                 switch (input.nextInt()) {
                     case 1: //Hambo
@@ -39,18 +38,8 @@ public class MainMenu {
                         break;
                     default:
                         System.out.println("Please enter the number corresponding to the action you choose: ");
+                        createCar();
                 }
-//                if ((input.nextInt() >= 4) && (input.nextInt() <= 0)) {
-//                    input.nextInt();
-////                    Integer.parseInt(input.next());
-////                   Sring.parseString(input.nextInt();
-////                    System.out.println("Please enter either a number between 1 and 4: ");
-//                    createCar();
-//                }
-//                else{
-////                    Integer.parseInt(input.next());
-//                    input.nextInt();
-//                }
 
             } catch (InputMismatchException ime) {
                 input.nextLine();
@@ -88,16 +77,9 @@ public class MainMenu {
                     break;
                 default:
                     System.out.println("Please enter the number corresponding to the action you choose: ");
+                    customMenu(car);
             }
-//            if ((input.nextInt() >= 4) && (input.nextInt() <= 0)) {
-//                input.nextInt();
-//
-//                System.out.println("Please enter either a number between 1 and 4: ");
-//                customMenu(car);
-//            }
-//            if((input.nextInt() <= 4) && (input.nextInt() >= 0)){
-//                input.nextInt();
-//            }
+
         }catch(InputMismatchException ime){
             input.nextLine();
             System.out.println("Please enter either a number between 1 and 4: ");
@@ -131,16 +113,9 @@ public class MainMenu {
                     break;
                 default:
                     System.out.println("Please enter the number corresponding to the action you choose: ");
+                    hamboMenu(prebuiltOne);
             }
-//            if ((input.nextInt() >= 4) && (input.nextInt() <= 0)) {
-//                input.nextInt();
-//
-//                System.out.println("Please enter either a number between 1 and 4: ");
-//                hamboMenu(prebuiltOne);
-//            }
-//            if((input.nextInt() <= 4) && (input.nextInt() >= 0)){
-//                input.nextInt();
-//            }
+
         }catch(InputMismatchException ime){
             input.nextLine();
             System.out.println("Please enter either a number between 1 and 4: ");
@@ -174,16 +149,9 @@ public class MainMenu {
                     break;
                 default:
                     System.out.println("Please enter the number corresponding to the action you choose: ");
+                    ratiMenu(prebuiltTwo);
             }
-//            if ((input.nextInt() >= 4) && (input.nextInt() <= 0)) {
-//                input.nextInt();
-//
-//                System.out.println("Please enter either a number between 1 and 4: ");
-//                ratiMenu(prebuiltTwo);
-//            }
-//            if((input.nextInt() <= 4) && (input.nextInt() >= 0)){
-//                input.nextInt();
-//            }
+
         }catch(InputMismatchException ime){
             input.nextLine();
             System.out.println("Please enter either a number between 1 and 4: ");
