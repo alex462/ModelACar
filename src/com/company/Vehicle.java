@@ -1,11 +1,8 @@
 package com.company;
 
-import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
-import static com.company.Main.vehicle;
-
-//import static com.company.Main.vehicle;
 
 /*
 abstract classes are good when you have a foundation class with information that other classes will use, but that will never be used by itself.
@@ -18,9 +15,7 @@ public abstract class Vehicle {
     private String model;
     private String color;
     private Scanner input = new Scanner(System.in);
-//    private Vehicle prebuiltOne;
-//    private Vehicle prebuiltTwo;
-//    private Vehicle car;
+
 
     public Vehicle(int year, String make, String model, String color) {
         this.year = year;
@@ -28,14 +23,6 @@ public abstract class Vehicle {
         this.model = model;
         this.color = color;
     }
-
-//    public void createPrebuiltTwo(){
-//
-//        PrebuiltTwo prebuiltTwo = new PrebuiltTwo();
-//        prebuiltTwo.getCarInfo();
-//        chooseVehicle();
-//    }
-
 
     public String getColor() {
         return color;

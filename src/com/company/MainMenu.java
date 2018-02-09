@@ -3,8 +3,6 @@ package com.company;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import static com.company.Main.mainMenu;
-
 public class MainMenu {
 
     private Scanner input = new Scanner(System.in);
