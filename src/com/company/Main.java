@@ -11,7 +11,7 @@ public class Main {
 //        vehicle = new Vehicle();
 //        vehicle.chooseVehicle();
 
-        mainMenu = new MainMenu();
+//        mainMenu = new MainMenu();
         mainMenu.createCar();
 
 
